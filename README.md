@@ -1,2 +1,4 @@
-# notes
-My Notes
+# Notes
+
+[Python](python.md)
+

@@ -1,3 +1,4 @@
+# Python
 In python, Hash (`#`) indicates a single-line comment.
 ```python
 # This is a single-line comment.
@@ -71,7 +72,6 @@ print(x.strip())  # both sides
 Hello   
 Hello
 ```
-
 Removing Prefixes and Suffixes:
 ```python
 x='https://www.youtube.com/'
@@ -102,4 +102,92 @@ print(1_000, 10_00, 100_000, 5_678.984_54)
 7 8 16
 7.0 8.0 2.0 6.25 200.0
 1000 1000 100000 5678.98454
+```
+# List
+A list is mutable, can hold multiple items in a specific order, including duplicates.
+
+Initializing Lists:
+```python
+a=[]
+b=list() # can convert any iterable to list
+print(a,b)
+```
+```
+[] []
+```
+In python, indices start at 0 and increase by 1 from the start, while negative indices start from the end,  from -1 and decrease by 1.
+```python
+cars=["bmw", "audi", "benz"]
+print(cars[0].upper(), cars[1].title())
+print(cars[-1].title(), cars[-3].upper())
+cars[-2]="tesla"
+print(cars)
+```
+```
+BMW Audi
+Benz BMW
+['bmw', 'tesla', 'benz']
+```
+```python
+cars=["bmw", "audi"]
+cars.append("tesla") # adds to the end of the list
+cars.insert(0, "benz") # inserts item before the element at the given index
+print(cars)
+cars.insert(-2, "ford")
+print(cars)
+```
+```
+['benz', 'bmw', 'audi', 'tesla']
+['benz', 'bmw', 'ford', 'audi', 'tesla']
+```
+Removing items from a list:
+```python
+cars=['benz', 'bmw', 'ford', 'audi', 'tesla', 'pagani']
+del cars[2] # deletes the elements at a particular index
+print(cars)
+x=cars.pop(1) # when you need the removed value
+print(x,cars)
+cars.remove('tesla') # when you know the value
+print(cars)
+```
+```
+['benz', 'bmw', 'audi', 'tesla', 'pagani']
+bmw ['benz', 'audi', 'tesla', 'pagani']
+['benz', 'audi', 'pagani']
+```
+Note: `.pop()` when used without arguments removes and returns the last element.
+Note: `.remove()` only removes the first match it finds.
+
+Changing the order of a list:
+- permanently
+```python
+cars=['benz', 'bmw', 'ford', 'audi', 'tesla', 'pagani']
+cars.reverse()
+print(cars)
+cars.sort()
+print(cars)
+cars.sort(reverse=True)
+print(cars)
+cars.reverse()
+print(cars)
+```
+```
+['pagani', 'tesla', 'audi', 'ford', 'bmw', 'benz']
+['audi', 'benz', 'bmw', 'ford', 'pagani', 'tesla']
+['tesla', 'pagani', 'ford', 'bmw', 'benz', 'audi']
+['audi', 'benz', 'bmw', 'ford', 'pagani', 'tesla']
+```
+- temporarily
+```python
+cars=['benz', 'bmw', 'ford', 'audi', 'tesla', 'pagani']
+print(sorted(cars))
+print(cars)
+print(sorted(cars, reverse=True))
+print(cars)
+```
+```
+['audi', 'benz', 'bmw', 'ford', 'pagani', 'tesla']
+['benz', 'bmw', 'ford', 'audi', 'tesla', 'pagani']
+['tesla', 'pagani', 'ford', 'bmw', 'benz', 'audi']
+['benz', 'bmw', 'ford', 'audi', 'tesla', 'pagani']
 ```

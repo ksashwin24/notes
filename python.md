@@ -128,6 +128,7 @@ BMW Audi
 Benz BMW
 ['bmw', 'tesla', 'benz']
 ```
+Adding items to a list:
 ```python
 cars=["bmw", "audi"]
 cars.append("tesla") # adds to the end of the list
@@ -144,22 +145,23 @@ Removing items from a list:
 ```python
 cars=['benz', 'bmw', 'ford', 'audi', 'tesla', 'pagani']
 del cars[2] # deletes the elements at a particular index
-print(cars)
+print(cars, len(cars)) # len() returns the number of elements in an object
 x=cars.pop(1) # when you need the removed value
-print(x,cars)
+print(x,cars, len(cars))
 cars.remove('tesla') # when you know the value
-print(cars)
+print(cars, len(cars))
 ```
 ```
-['benz', 'bmw', 'audi', 'tesla', 'pagani']
-bmw ['benz', 'audi', 'tesla', 'pagani']
-['benz', 'audi', 'pagani']
+['benz', 'bmw', 'audi', 'tesla', 'pagani'] 5
+bmw ['benz', 'audi', 'tesla', 'pagani'] 4
+['benz', 'audi', 'pagani'] 3
 ```
 Note: `.pop()` when used without arguments removes and returns the last element.
+
 Note: `.remove()` only removes the first match it finds.
 
 Changing the order of a list:
-- permanently
+`.sort()` and `.reverse()` change the order permanently
 ```python
 cars=['benz', 'bmw', 'ford', 'audi', 'tesla', 'pagani']
 cars.reverse()
@@ -177,7 +179,7 @@ print(cars)
 ['tesla', 'pagani', 'ford', 'bmw', 'benz', 'audi']
 ['audi', 'benz', 'bmw', 'ford', 'pagani', 'tesla']
 ```
-- temporarily
+`sorted()` changes the order temporarily
 ```python
 cars=['benz', 'bmw', 'ford', 'audi', 'tesla', 'pagani']
 print(sorted(cars))
